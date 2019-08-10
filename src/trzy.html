@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>próba</title>
+  <script src="js/jquery-3.4.1.js"></script>
+  <script id="result-template" type="text/x-handlebars-template">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+
+
+
+
+
+  var data = { depts: [
+      {   name: "Engineering",
+        employees: [
+          {firstName: "Christophe", lastName: "Coenraets"},
+          {firstName: "John", lastName: "Smith"}]
+      },
+      {   name: "Sales",
+        employees: [
+          {firstName: "Paula", lastName: "Taylor"},
+          {firstName: "Lisa", lastName: "Jones"}]
+      }]
+  };
+
+  var tpl = "{{#depts}}<h1>{{name}}</h1>" +
+    "<ul>{{#employees}}{{>employee}}{{/employees}}</ul>{{/depts}}";
+  var partials = {employee: "<li>{{firstName}} {{lastName}}</li>"};
+  var html = Mustache.to_html(tpl, data, partials);
+  $('#sampleArea').html(html);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doadaj</title>
+  <script src="js/handlebars-v4.1.2.js"></script>
+  <script src="js/jquery-3.4.1.js"></script>
+  <script id="result-template" type="text/x-handlebars-template">
+
+
+  </script>
+</head>
+<body>
+<p>Tu będzie dodawanie do bazy</p>
+
+<div id="derekData"></div>
+
+
+
+<script type="text/javascript">
+
+  // Structure how I want the data to dynamically be
+  // placed by defining the keys in between {{}}
+  var myInfo = "<p>My name is {{name}} and I live at {{street}} in {{city}}, {{state}}</p>";
+
+  // Generate a JS function that will create the output
+  var template = Handlebars.compile(myInfo);
+
+  // template receives the key / value pairs and puts
+  // them in place
+  var data = template({name: "Derek", street: "123 Main St", city: "Pittsburgh", state: "PA"});
+
+  // Update the div with the completed output
+  document.getElementById('derekData').innerHTML += data;
+</script>
+
+<div id="obywatel"></div>
+
+<!--<div id="quoteData"></div>-->
+
+<!--<script type="text/javascript">
+
+
+  var obywatel = $.getJSON("http://localhost:8091/obywatel/download/", function (data) {
+    var obywatelDane = "<p>identyfikator to:{{id}} data utworzenia to:{{kiedy_utworzono}} " +
+      "data ostatniej modyfikacji to{{kiedy_zmodyfikowano}} numer dowodu{{nr_dowodu}} imie to {{imie}}" +
+      "nazwisko to {{nazwisko}} adres to {{adres}} aktualny to {{czy_zarchiwizowany}} " +
+      "data urodzenia to {{data_urodzenia}} pesel to {{pesel}}</p>";
+
+    template = Handlebars.compile(obywatelDane);
+
+    var dat = JSON.parse(data)
+
+    var dane = template({
+      id : 1,
+      kiedy_utworzono : "2019-08-09T16:19:41.571+0000",
+      kiedy_zmodyfikowano : "2019-08-09T16:19:41.571+0000",
+      nr_dowodu : "xr-9867",
+      imie : "Janusz",
+      nazwisko : "Korwin-Mikke",
+      adres : "Woronicza 16 Warszawa ",
+      czy_zarchiwizowany : false,
+      data_urodzenia : "1933-02-25T23:00:00.000+0000",
+      pesel : "12345678901"
+    })
+
+
+    document.getElementById('obywatel').innerHTML += dane;
+
+
+
+
+  } );
+
+
+
+</script>-->
+
+<script type="text/javascript">
+
+
+
+    var obywatelDane = "<p>identyfikator to: {{id}}   data utworzenia to:   {{kiedy_utworzono}}   " +
+      "data ostatniej modyfikacji to   {{kiedy_zmodyfikowano}}   numer dowodu    {{nr_dowodu}}   imie to   {{imie}}   " +
+      "nazwisko to   {{nazwisko}}   adres to   {{adres}}   aktualny to    {{czy_zarchiwizowany}}   " +
+      "data urodzenia to    {{data_urodzenia}}   pesel to   {{pesel}}    </p>";
+
+    template = Handlebars.compile(obywatelDane);
+
+
+    var son = {
+      id: 1,
+      kiedy_utworzono: "2019-08-09T16:19:41.571+0000",
+      kiedy_zmodyfikowano: "2019-08-09T16:19:41.571+0000",
+      nr_dowodu: "xr-9867",
+      imie: "Janusz",
+      nazwisko: "Korwin-Mikke",
+      adres: "Woronicza 16 Warszawa ",
+      czy_zarchiwizowany: false,
+      data_urodzenia: "1933-02-25T23:00:00.000+0000",
+      pesel: "12345678901"
+    };
+    var dane = template(son);
+
+    var but ="    <button type=\"button\" onclick=\"alert('alert')\">Click Me!</button>"
+
+
+    function f1() {
+      var noweImie = prompt("jak tam");
+      var obywatelDane = "<p>identyfikator to: {{id}}   data utworzenia to:   {{kiedy_utworzono}}   " +
+        "data ostatniej modyfikacji to   {{kiedy_zmodyfikowano}}   numer dowodu    {{nr_dowodu}}   imie to   {{imie}}   " +
+        "nazwisko to   {{nazwisko}}   adres to   {{adres}}   aktualny to    {{czy_zarchiwizowany}}   " +
+        "data urodzenia to    {{data_urodzenia}}   pesel to   {{pesel}}    </p>";
+
+      template = Handlebars.compile(obywatelDane);
+
+
+      var son = {
+        id: 1,
+        kiedy_utworzono: "2019-08-09T16:19:41.571+0000",
+        kiedy_zmodyfikowano: "2019-08-09T16:19:41.571+0000",
+        nr_dowodu: "xr-9867",
+        imie: "Janusz",
+        nazwisko: "Korwin-Mikke",
+        adres: "Woronicza 16 Warszawa ",
+        czy_zarchiwizowany: false,
+        data_urodzenia: "1933-02-25T23:00:00.000+0000",
+        pesel: "12345678901"
+      };
+      son.pesel = noweImie;
+      //document.getElementById("obywatel").empty();
+      dane = template(son);
+      var but2  ="    <button type=\"button\" onclick=\" f1()\">nacisnij</button>"
+      var bancz = (dane +""+ "czesc "+ yourName+but+but2);
+      document.getElementById('obywatel').innerHTML += bancz;
+
+
+
+      
+    }
+
+    var but2  ="    <button type=\"button\" onclick=\" f1(son)\">nacisnij</button>"
+
+
+
+
+
+
+
+    var yourName = prompt("What is your name?");
+    var bancz = (dane +""+ "czesc "+ yourName+but+but2);
+
+
+
+    document.getElementById('obywatel').innerHTML += bancz;
+
+
+
+
+  //  document.getElementById("obywatel").innerHTML = "Hello " + yourName;
+
+</script>
+
+
+
+<script id="quote-template" type="text/x-handlebars-template">
+
+  <h3>Favorite {{name}} Quotes</h3>
+  <ol>
+    {{!-- 2. The each helper can insert an array of data --}}
+    {{#each quotes}}
+    <li>{{quote}}</li>
+    {{/each}}
+  </ol>
+
+  {{!-- 3. You can use Html tags with triple-stash --}}
+  {{{yogiBio}}}<button type="button">Click Me!</button>
+
+  {{!-- 4. Call to custom Helper function, which will generate html tags without the triple-stash --}}
+  {{makeLink "Yogi Berra Museum" "http://yogiberramuseum.org/"}}<br />
+
+  {{!-- 5. Pass attributes to a Helper --}}
+  {{changeColor "Make my text red" color="blue"}}<br />
+
+
+</script>
+
+
+
+<script type="text/javascript">
+
+  var quoteInfo = document.getElementById("quote-template").innerHTML;
+
+
+  var quoteData = template({
+    name: "Yogi Berra",
+    quotes: [
+      {quote: "If you don't know where you are going, you might wind up someplace else."},
+      {quote: "You better cut the pizza in four pieces because I'm not hungry enough to eat six."},
+      {quote: "I never said most of the things I said."},
+      {quote: "Nobody goes there anymore because it's too crowded."}
+    ],
+    // 3b. Passing tags to the triple stash
+    yogiBio: '<i>Lawrence Peter "Yogi" Berra (May 12, 1925 - September 22, 2015) was an American professional baseball catcher, manager, and coach who played 19 seasons in Major League Baseball (MLB) (1946 - 63, 1965), all but the last for the New York Yankees. An 18-time All-Star and 10-time World Series champion as a player, Berra had a career batting average of .285, while compiling 358 home runs and 1,430 runs batted in.</i>'
+  });
+
+  document.getElementById('quoteData').innerHTML += quoteData;
+
+
+
+
+</script>
+
+<!--<script id="dupa" type="text/x-handlebars-template">
+
+  <h3>Favorite {{name}} Quotes</h3>
+  <ol>
+    {{!-- 2. The each helper can insert an array of data --}}
+    {{#each quotes}}
+    <li>{{quote}}</li>
+    {{/each}}
+  </ol>
+
+  {{!-- 3. You can use Html tags with triple-stash --}}
+  {{{yogiBio}}}<br /><br />
+
+  {{!-- 4. Call to custom Helper function, which will generate html tags without the triple-stash --}}
+  {{makeLink "Yogi Berra Museum" "http://yogiberramuseum.org/"}}<br />
+
+  {{!-- 5. Pass attributes to a Helper --}}
+  {{changeColor "Make my text red" color="blue"}}<br />
+
+
+
+
+
+
+
+
+</script>-->
+
+</body>
+</html>
