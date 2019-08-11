@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zmień</title>
+
+  <script src="js/handlebars-v4.1.2.js"></script>
+  <script src="js/jquery-3.4.1.js"></script>
+
+
+</head>
+<body>
+
+<div id = "obywatel"></div>
+<div id = "obywatel2"></div>
+<!--<form id = "formularz">
+  nr dowodu: <br>
+  <input type = "text " name = "nr_dowodu" ><br>
+  imie: <br>
+  <input type = "text " name = "imie" ><br>
+  nazwisko: <br>
+  <input type = "text " name = "nazwisko" ><br>
+  adres: <br>
+  <input type = "text " name = "adres" ><br>
+  data urodzenia: <br>
+  <input type = "date " name = "data_urodzenia" ><br>
+  pesel:<br>
+  <input type = "text " name = "pesel" ><br><br>
+  <input type = "submit" value = "Zatwierdź">
+
+
+</form>-->
+<div id = "formularz"></div>
+
+
+
+
+<script type="text/javascript">
+
+
+
+
+
+  var obywatelDane = "<p>identyfikator to: {{id}}   data utworzenia to:   {{kiedy_utworzono}}   " +
+    "data ostatniej modyfikacji to   {{kiedy_zmodyfikowano}}   numer dowodu    {{nr_dowodu}}   imie to   {{imie}}   " +
+    "nazwisko to   {{nazwisko}}   adres to   {{adres}}   aktualny to    {{czy_zarchiwizowany}}   " +
+    "data urodzenia to    {{data_urodzenia}}   pesel to   {{pesel}}    </p>";
+
+  template = Handlebars.compile(obywatelDane);
+
+
+  var son = {
+    id: 1,
+    kiedy_utworzono: "2019-08-09T16:19:41.571+0000",
+    kiedy_zmodyfikowano: "2019-08-09T16:19:41.571+0000",
+    nr_dowodu: "xr-9867",
+    imie: "Janusz",
+    nazwisko: "Korwin-Mikke",
+    adres: "Woronicza 16 Warszawa ",
+    czy_zarchiwizowany: false,
+    data_urodzenia: "1933-02-25",
+    pesel: "12345678901"
+  };
+
+
+
+
+  var formularz = "<form id = 'ff' >\n" +
+    "    nr dowodu: <br>\n" +
+    "    <input type = \"text \" name = \"nr_dowodu\" value =  {{nr_dowodu}} ><br>\n" +
+    "    imie: <br>\n" +
+    "    <input type = \"text \" name = \"imie\"  value={{imie}}><br>\n" +
+    "    nazwisko: <br>\n" +
+    "    <input type = \"text \" name = \"nazwisko\" value={{nazwisko}} ><br>\n" +
+    "    adres: <br>\n" +
+    "    <input type = \"text \" name = \"adres\" value = {{adres}} ><br>\n" +
+    "    data urodzenia: <br>\n" +
+    "    <input type = \"date \" name = \"data_urodzenia\" value = {{data_urodzenia}}  ><br>\n" +
+    "    pesel:<br>\n" +
+    "    <input id =\"in1\"type = \"text \" name = \"pesel\" value = {{pesel}}><br><br>\n" +
+    "    <input type = \"button\" value = \"Zatwierdź\" onclick='f3(obywatelDane, son)'>\n" +
+    "\n" +
+    "\n" +
+    "  </form>";
+
+
+
+
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
+
+
+
+
+  function f3(obywatelDane, son){
+
+
+
+
+
+
+    son.pesel = document.getElementById("in1").value;
+
+
+
+    template = Handlebars.compile(obywatelDane);
+
+    var dane2 = template(son);
+
+    document.getElementById("obywatel").innerHTML = "";
+    //sleep(10000);
+    document.getElementById("obywatel").innerHTML += dane2 + window.but3;
+
+    document.getElementById("formularz").innerHTML = "";
+
+
+
+
+
+
+  }
+
+  function f2(obywatelDane,son,formularz) {
+
+
+
+    template = Handlebars.compile(formularz);
+
+    var dane = template(son);
+
+
+
+    document.getElementById("formularz").innerHTML+=dane;
+
+
+
+
+
+
+
+
+      //document.getElementById("obywatel").innerHTML = "";
+
+     /// f3(obywatelDane,son)
+
+
+
+
+
+
+
+
+  }
+
+  template = Handlebars.compile(obywatelDane);
+
+  var dane = template(son);
+
+
+
+  //  var bancz = ( dane + but3 + f3(obywatelDane, son));
+   // alert(son.pesel);
+
+
+  var but3  ="    <button type=\"button\" onclick=\" f2(obywatelDane,son,formularz)\">edytuj</button>"
+
+    var bancz = ( dane + but3);
+
+
+
+
+
+
+
+  document.getElementById('obywatel').innerHTML += bancz;
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
+

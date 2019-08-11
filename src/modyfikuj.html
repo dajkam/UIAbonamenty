@@ -31,6 +31,8 @@
   </form>-->
   <form id = "formularz"></form>
 
+  <div id = "obywatel2"></div>
+
 
   <script type="text/javascript">
 
@@ -101,6 +103,20 @@
 
     var but3  ="    <button type=\"button\" onclick=\" f2()\">edytuj</button>"
 
+    function f3(obywatelDane, son){
+      son.pesel = document.getElementById("in1").val();
+      alert(document.getElementById("in1").val())
+
+      template = Handlebars.compile(obywatelDane);
+
+      document.getElementById("obywatel").innerHTML = "";
+
+      var dane2 = template(son);
+
+      document.getElementById("obywatel").innerHTML += dane2;
+
+    }
+
     function f2() {
 
       var obywatelDane = "<p>identyfikator to: {{id}}   data utworzenia to:   {{kiedy_utworzono}}   " +
@@ -124,7 +140,9 @@
         pesel: "12345678901"
       };
 
-      var formularz = "<form id = \"formularz\">\n" +
+
+
+      var formularz = "<form onsubmit='f3(obywatelDane,son)' id = 'ff'>\n" +
         "    nr dowodu: <br>\n" +
         "    <input type = \"text \" name = \"nr_dowodu\" value =  {{nr_dowodu}} ><br>\n" +
         "    imie: <br>\n" +
@@ -136,19 +154,35 @@
         "    data urodzenia: <br>\n" +
         "    <input type = \"date \" name = \"data_urodzenia\" value = {{data_urodzenia}}  ><br>\n" +
         "    pesel:<br>\n" +
-        "    <input type = \"text \" name = \"pesel\" value = {{pesel}}><br><br>\n" +
-        "    <input type = \"submit\" value = \"Zatwierdź\">\n" +
+        "    <input id =\"in1\"type = \"text \" name = \"pesel\" value = {{pesel}}><br><br>\n" +
+        "    <input type = \"submit\" value = \"Zatwierdź\" >\n" +
         "\n" +
         "\n" +
         "  </form>";
+
+
+
+
       template = Handlebars.compile(formularz);
 
       var dane = template(son);
 
       document.getElementById("formularz").innerHTML+=dane;
 
+      $("formularz").submit( function (obywatelDane,son) {
+
+        document.getElementById("obywatel").innerHTML = ""
+
+      })
+
+
+
+
+
 
     }
+
+
 
 
 
