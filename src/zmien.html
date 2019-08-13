@@ -53,7 +53,7 @@
     id: 1,
     kiedy_utworzono: "2019-08-09T16:19:41.571+0000",
     kiedy_zmodyfikowano: "2019-08-09T16:19:41.571+0000",
-    nr_dowodu: "xr-9867",
+    nr_dowodu: "CCH864397",
     imie: "Janusz",
     nazwisko: "Korwin-Mikke",
     adres: "Woronicza 16 Warszawa ",
@@ -137,7 +137,7 @@ function walidacjaNumeruDowodu(nr_dowodu_s) {
 
   var nr_dowodu = nr_dowodu_s.toUpperCase()
 
-  alert(nr_dowodu)
+
 
  // nr_dowodu.replace(/\s/g,'')
 
@@ -214,7 +214,7 @@ function walidacjaNumeruDowodu(nr_dowodu_s) {
 
     var dane2 = template(son);
 
-    document.getElementById("obywatel").innerHTML = "";
+   document.getElementById("obywatel").innerHTML = "";
     //sleep(10000);
     document.getElementById("obywatel").innerHTML += dane2 + window.but3;
 
@@ -234,6 +234,14 @@ function walidacjaNumeruDowodu(nr_dowodu_s) {
     template = Handlebars.compile(formularz);
 
     var dane = template(son);
+
+    template = Handlebars.compile(obywatelDane)
+
+    var dane2 = template(son);
+
+    document.getElementById("obywatel").innerHTML = ""
+
+   document.getElementById("obywatel").innerHTML += dane2;
 
 
 
