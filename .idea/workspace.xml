@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c7b54d16-1102-4577-9760-7a6bfbab35a7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/przykładowe numery dowodu" beforeDir="false" afterPath="$PROJECT_DIR$/src/przykładowe numery dowodu" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zmien.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/zmien.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -45,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/zmien.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="182" column="53" selection-start-line="182" selection-start-column="53" selection-end-line="182" selection-end-column="53" />
+            <state relative-caret-position="590">
+              <caret line="243" column="2" selection-start-line="243" selection-start-column="2" selection-end-line="243" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -131,8 +132,8 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="width" value="953" />
+  <component name="ProjectFrameBounds" extendedState="5">
+    <option name="width" value="945" />
     <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -146,7 +147,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565658124192" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565696861512" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -205,15 +206,16 @@
       <workItem from="1565442513964" duration="11445000" />
       <workItem from="1565468713103" duration="14348000" />
       <workItem from="1565531815613" duration="24514000" />
-      <workItem from="1565621005344" duration="11461000" />
+      <workItem from="1565621005344" duration="11714000" />
+      <workItem from="1565693226647" duration="3031000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86161000" />
+    <option name="totallyTimeSpent" value="89445000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="953" height="1053" extended-state="4" />
+    <frame x="0" y="0" width="945" height="1053" extended-state="5" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.26077348" />
@@ -244,7 +246,7 @@
       <window_info anchor="right" id="Maven" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info active="true" anchor="right" id="Database" order="8" visible="true" weight="0.03314917" />
+      <window_info active="true" anchor="right" id="Database" order="8" visible="true" weight="0.033444814" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,8 +361,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/zmien.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="182" column="53" selection-start-line="182" selection-start-column="53" selection-end-line="182" selection-end-column="53" />
+        <state relative-caret-position="590">
+          <caret line="243" column="2" selection-start-line="243" selection-start-column="2" selection-end-line="243" selection-end-column="2" />
         </state>
       </provider>
     </entry>
